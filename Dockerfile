@@ -3,7 +3,7 @@ COPY . /workdir
 
 COPY . ./app
 
-RUN Rscript -e "install.packages(c('rhino'), repos='http://cran.rstudio.com')"
+RUN Rscript -e "install.packages(c('rhino', 'bslib'), repos='http://cran.rstudio.com')"
 # expose port
 EXPOSE 4040
 
