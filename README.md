@@ -4,5 +4,5 @@
 
 ## Step to use
 
-1. `docker build -t nepolin/shiny .`
-1. `docker run --rm -p 4040:4040 nepolin/shiny`
+1. `docker build -t nepolin/sea_questionnaire .`
+1. `docker run --rm -p 4040:4040 nepolin/sea_questionnaire`
