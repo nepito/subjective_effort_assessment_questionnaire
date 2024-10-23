@@ -1,7 +1,7 @@
 library(shiny)
 library(tidyverse)
 
-datos <- read_csv("https://raw.githubusercontent.com/nepito/world_cup_semis/develop/tests/data/morocco_vs_spain.csv")
+datos <- read_csv("www/data/datos_rpe_act2_c3.csv")
 ui <- fluidPage(
   titlePanel(title = span(img(src = "logo.jpeg", height = 35), "")),
   tableOutput("static"),
