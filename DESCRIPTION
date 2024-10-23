@@ -1,0 +1,24 @@
+Package: templater
+Title: Template for Shiny projects
+Authors@R: c(
+    person(given = "Nepo",
+           family = "Rojas",
+           role = c("aut", "cre", "cph"),
+           email = "nepo.rojas@gmail.com"
+           ))
+Config/testthat/edition: 3
+Description: Plantilla de NIES para proyectos en Shiny
+Encoding: UTF-8
+Imports:
+    R6,
+    tidyverse
+LazyData: true
+License: AGPL-3.0-or-later
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Suggests:
+    devtools,
+    roxygen2,
+    testthat
+Type: Package
+Version: 0.1.0
