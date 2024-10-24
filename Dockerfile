@@ -3,7 +3,7 @@ COPY . /workdir
 
 COPY . ./app
 
-RUN Rscript -e "install.packages(c('bslib', 'DT', 'rhino'), repos='http://cran.rstudio.com')"
+RUN Rscript -e "install.packages(c('bslib', 'crosstalk', 'DT', 'plotly', 'rhino'), repos='http://cran.rstudio.com')"
 # expose port
 EXPOSE 4040
 
