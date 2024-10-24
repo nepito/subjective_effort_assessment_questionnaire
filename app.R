@@ -8,11 +8,16 @@ ui <- bslib::page_sidebar(
     selectInput("name", "Nombre", all_playes, selected = "Matt"),
   ),
   titlePanel(title = span(img(src = "logo.jpeg", height = 35), "")),
-  tableOutput("static"),
-  DT::DTOutput("dynamic")
+  DT::DTOutput("dynamic"),
+  plotOutput("plot", brush = "plot_brush")
+
 )
 server <- function(input, output, session) {
-  output$static <- renderTable(head(datos))
+  output$plot <- renderPlot({
+    datos |>
+      filter(Name == input$name) |>
+      ggplot(aes(x=Date, Value)) + geom_point()
+  }, res = 96)
   output$dynamic <- DT::renderDT(datos, options = list(pageLength = 5))
 }
 shinyApp(ui, server)
