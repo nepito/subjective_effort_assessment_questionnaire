@@ -1,5 +1,4 @@
 library(shiny)
-library(crosstalk)
 library(tidyverse)
 library(plotly)
 
@@ -8,7 +7,7 @@ dat <- SharedData$new(datos)
 barplot <- SharedData$new(datos)
 
 sidebar_diamonds <- bslib::layout_sidebar(
-  sidebar = filter_select("name", "Nombre", dat, ~Name, allLevels = TRUE, multiple = FALSE),
+  sidebar = crosstalk::filter_select("name", "Nombre", dat, ~Name, allLevels = TRUE, multiple = FALSE),
   plot_ly(dat, x = ~Date, y = ~Value, type = 'scatter') |>
     layout(title = 'Valoración subjetiva del esfuerzo por jugador',
          xaxis = list(title = ''),
@@ -16,7 +15,7 @@ sidebar_diamonds <- bslib::layout_sidebar(
 )
 
 sidebar_bar <- bslib::layout_sidebar(
-  sidebar = filter_select("date", "Fecha", barplot, ~Date, allLevels = FALSE, multiple = FALSE),
+  sidebar = crosstalk::filter_select("date", "Fecha", barplot, ~Date, allLevels = FALSE, multiple = FALSE),
   plot_ly(barplot) |>
     add_histogram(x = ~Value) |>
     layout(title = 'Valoración subjetiva del esfuerzo por día',
